@@ -30,22 +30,22 @@ The reasons for affirming this are many and it would take an essay of thousands 
 however, I will try to compose a short list of those that for me are the main ones:
 <br/>
 
-* It exploits the most fundamental resources we have always used to protect property since the dawn of time
+- It exploits the most fundamental resources we have always used to protect property since the dawn of time
  <br/>
 (energy / power / labor) and applies them for the protection of assets in a new domain: cyberspace.
-* It is simple and elegant
-* It imposes prohibitive physical costs on any malicious actor who wants to attack the system.
-* It is *economically* and *game-theoretically* **sound**
-* Proof of Work **is** work
+- It is simple and elegant
+- It imposes prohibitive physical costs on any malicious actor who wants to attack the system.
+- It is *economically* and *game-theoretically* **sound**
+- Proof of Work **is** work
   * entrepreneurs and validators need to reinvest the resources earned from mining in new equipment and people, creating values and jobs.
-* Compared to *PoS* it is less exposed to the creation of monopolies (achieving a monopoly has a much greater physical cost).
-* The environmental and ecological argument does not stand up to scrutiny as the same thing can be said of any other industry ever conceived by man
+- Compared to *PoS* it is less exposed to the creation of monopolies (achieving a monopoly has a much greater physical cost).
+- The environmental and ecological argument does not stand up to scrutiny as the same thing can be said of any other industry ever conceived by man
 <br/>
 but this has never been a valid reason not to produce cars, chips, financial circuits and so on.
 <br>
 It could also be a good incentive for the mass adoption of cleaner energy sources.
-* PoS is the child of modern economic theory, which supports a paradigm of infinite growth in which value is totally disconnected from the underlying physical resources and laws, essentially violating the laws of thermodynamics.
-* PoS it is nothing new, every digital and centralized asset we own and participate in use a PoS system in a way or another.
+- PoS is the child of modern economic theory, which supports a paradigm of infinite growth in which value is totally disconnected from the underlying physical resources and laws, essentially violating the laws of thermodynamics.
+- PoS it is nothing new, every digital and centralized asset we own and participate in use a PoS system in a way or another.
 
 <br/> 
 
