@@ -5,4 +5,4 @@ This repo contains guides and PoC on how to integrate <a href="https://www.vault
 - `Kubectl`
 - `Helm`
 ## Usage
-The sub-folders are numbered, proceed from the lowes number to the grates and follow instructions there.
+The sub-folders are numbered, proceed from the lowest number to the gratest and follow instructions there.
