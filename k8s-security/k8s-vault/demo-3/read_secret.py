@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import time as t
 
-SECRET_PATH = '/vault/secrets/helloworld' # This is the path inside the container, you can also pass this as an env variable
+SECRET_PATH = '/vault/secrets/helloworld' # This is the path inside the container, you can also pass this as an env variable, config map etc.
 
 while(True):
     try:
