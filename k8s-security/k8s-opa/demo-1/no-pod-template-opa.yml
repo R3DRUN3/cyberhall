@@ -1,0 +1,18 @@
+apiVersion: templates.gatekeeper.sh/v1beta1
+kind: ConstraintTemplate
+metadata:
+  name: deploymentconstraint
+spec:
+  crd:
+    spec:
+      names:
+        kind: DeploymentConstraint
+  targets:
+    - target: admission.k8s.gatekeeper.sh
+      rego: |
+        package insomniacoder.constraint
+        violation[{"msg": msg}] {
+          input.review.object.kind == "Pod"
+          input.review.operation = "CREATE"
+          msg := "You cannot create a resource of type 'Pod' in this namespace"
+        }
