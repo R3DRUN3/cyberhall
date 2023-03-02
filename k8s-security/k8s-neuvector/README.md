@@ -82,12 +82,12 @@ Now we can reach the interface at the following url: `https://localhost:8443`
 <br/>
 (login with default credentials: `admin`, `admin`)
 
-<img src="images/login-page.png" width="950" height="750">
+<img src="images/login-page.png" width="1250" height="750">
 
 <br/>
 
 Now you can explore NeuVector Dashboard and experiment with it (see the `References` paragraph of the current document)
-<img src="images/dashboard.png" width="950" height="750">
+<img src="images/dashboard.png" width="1250" height="750">
 
 
 
