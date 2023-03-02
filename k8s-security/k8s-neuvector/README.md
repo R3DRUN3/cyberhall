@@ -36,7 +36,7 @@ helm upgrade --install neuvector neuvector/core --version 2.4.2 \
 --namespace neuvector
 ```
 
-The output of the following command is:
+The output of the previous command is:
 ```console
 Release "neuvector" does not exist. Installing it now.
 NAME: neuvector
