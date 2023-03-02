@@ -1,8 +1,8 @@
 # NEUVECTOR  DEMO
 
 ## References
-- Official <a href="https://github.com/neuvector/neuvector">repository</a> .
-- Official  <a href="https://open-docs.neuvector.com/">documentation</a>.
+- Official <a href="https://github.com/neuvector/neuvector">repository</a>
+- Official  <a href="https://open-docs.neuvector.com/">documentation</a>
 
 ## Prerequisites
 - docker
