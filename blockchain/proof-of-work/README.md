@@ -76,3 +76,7 @@ STARTING IN ADVERSARIAL MODE ===>
 
  ################### Work took 0.7425260543823242 seconds ###################
 ```
+
+<br/>
+
+For another example of Proof of Work implementation (writte in *Go*), take a look at [this](https://github.com/r3drun3/bitcoin-simplified) repo.
