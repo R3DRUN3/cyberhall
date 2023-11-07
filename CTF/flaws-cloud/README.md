@@ -21,7 +21,7 @@ In this repository, we will explore a series of challenges related to S3 by leve
 ## Challenges  
 > **Note**
 > To add depth and realism to the scenario, we will structure our challenge by assuming that flaws.cloud is a web service  
-> for which a customer has requested a black box Vulnerability Assessment & Penetration Testing (VAPT).  
+> for which a customer has requested a black box **Vulnerability Assessment & Penetration Testing (VAPT)**.  
 > In this approach, we will have no prior information beyond the target domain, making the engagement more challenging and realistic.  
 
 
@@ -451,6 +451,7 @@ aws ec2 describe-instances
 ```  
 No luck either 😞  
 Maybe the maker of flaws.cloud deleted them...no much else we can do here.  
+Our customer can sleep peaceful dreams... for now.  
 
 
 
