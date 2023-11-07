@@ -21,14 +21,18 @@ In this repository, we will explore a series of challenges related to S3 by leve
 ## Challenges  
 > **Note**
 > To add depth and realism to the scenario, we will structure our challenge by assuming that flaws.cloud is a web service  
-> for which a client has requested a black box Vulnerability Assessment & Penetration Testing (VAPT).  
+> for which a customer has requested a black box Vulnerability Assessment & Penetration Testing (VAPT).  
 > In this approach, we will have no prior information beyond the target domain, making the engagement more challenging and realistic.
 
 <details>
 <summary>Challenge 1</summary>
 
 L'ets begin.  
-As we are aware, the only information available to us is that the service is exposed at the URL http://flaws.cloud.  
+As we are aware, the only information available to us is that the service is exposed at the URL http://flaws.cloud:  
+
+<img src="images/flaws-website.png" alt="flaws.cloud" width="3000" height="290">  
+
+
 The initial step we can take is to perform a DNS lookup to gather additional information:  
 ```console
 nslookup flaws.cloud
@@ -101,7 +105,7 @@ aws s3 ls s3://flaws.cloud
 Very good, we are able to list this bucket contents!  
 Feel free to take a look at all the files in the bucket...  
 the most interesting one seems to be `secret-dd02c7c.html`, let's inspect this:  
-```console
+```html
 aws s3 cp s3://flaws.cloud/secret-dd02c7c.html -
 
 <html>
@@ -141,7 +145,7 @@ Level 2 is at <a href="http://level2-c8b217a33fcf1f839f6f1f73a00a9ae7.flaws.clou
 The content of the file displays the link to the next challenge. Well done!  
 
 **Security Mitigations**:  
-On AWS you can set up S3 buckets with all sorts of permissions and functionality including using them to host static files.  
+We need to explain to our customer that on AWS you can set up S3 buckets with all sorts of permissions and functionality including using them to host static files.  
 A number of people accidentally open them up with permissions that are too loose.  
 By default, S3 buckets are private and secure when they are created.  
 To allow it to be accessed as a web page, you have to turn on `Static Website Hosting` and changed the aws  
@@ -153,13 +157,78 @@ But then you can introduce the flaw if you change the permissions to add `Everyo
 
 
 
-
 </details>
 
 <br/>
 
 <details>
 <summary>Challenge 2</summary>
+
+Now we can procede with the second challenge.  
+
+> **Note**
+> This challenge is similar to the first one but you will need an aws accout.  
+
+
+We know that the link to the new bucket is http://level2-c8b217a33fcf1f839f6f1f73a00a9ae7.flaws.cloud.  
+Once you have your aws cli configured with keys from your aws account, let's try to list all the files in the bucket:  
+```console
+aws s3 ls s3://level2-c8b217a33fcf1f839f6f1f73a00a9ae7.flaws.cloud
+
+2017-02-27 03:02:15      80751 everyone.png
+2017-03-03 04:47:17       1433 hint1.html
+2017-02-27 03:04:39       1035 hint2.html
+2017-02-27 03:02:14       2786 index.html
+2017-02-27 03:02:14         26 robots.txt
+2017-02-27 03:02:15       1051 secret-e4443fc.html
+```  
+
+Once again we notice that there is a *secret* html file, let's cat is content:  
+
+aws s3 cp s3://level2-c8b217a33fcf1f839f6f1f73a00a9ae7.flaws.cloud/secret-e4443fc.html -  
+```html
+<html>
+    <head>
+        <title>flAWS</title>
+        <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+        <style>
+            body { font-family: Andale Mono, monospace; }
+            :not(center) > pre { background-color: #202020; padding: 4px; border-radius: 5px; border-color:#00d000;
+            border-width: 1px; border-style: solid;}
+        </style>
+    </head>
+<body
+  text="#00d000"
+  bgcolor="#000000"
+  style="max-width:800px; margin-left:auto ;margin-right:auto"
+  vlink="#00ff00" link="#00ff00">
+
+<center>
+<pre >
+ _____  _       ____  __    __  _____
+|     || |     /    ||  |__|  |/ ___/
+|   __|| |    |  o  ||  |  |  (   \_
+|  |_  | |___ |     ||  |  |  |\__  |
+|   _] |     ||  _  ||  `  '  |/  \ |
+|  |   |     ||  |  | \      / \    |
+|__|   |_____||__|__|  \_/\_/   \___|
+</pre>
+
+<h1>Congrats! You found the secret file!</h1>
+</center>
+
+
+Level 3 is at <a href="http://level3-9afd3927f195e10225021a578e6f78df.flaws.cloud">http://level3-9afd3927f195e10225021a578e6f78df.flaws.cloud</a>%
+```   
+
+The content of the file displays the link to the next challenge. Well done!  
+
+**Security Mitigations**:  
+We need to explain to our customer that similar to opening permissions to `Everyone` in the previous bucket/challenge, people accidentally open permissions to `Any Authenticated AWS User`.  
+
+> **Warning**
+> They might mistakenly think this will only be users of their account, when in fact it means anyone that has an AWS account!
+
 
 
 </details>
@@ -168,6 +237,8 @@ But then you can introduce the flaw if you change the permissions to add `Everyo
 
 <details>
 <summary>Challenge 3</summary>
+
+Now we can procede with the second challenge.  
 
 
 </details>
