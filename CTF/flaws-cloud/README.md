@@ -441,6 +441,15 @@ Let's see if we can list the backups/snapshots of the EC2 instance using the AWS
 ```  
 
 Mmmm it seems that, as of 07/11/2023, there are no snapshots.  
+Maybe we can describe instances?  
+```console
+aws ec2 describe-instances
+
+{
+    "Reservations": []
+}
+```  
+No luck either 😞  
 Maybe the maker of flaws.cloud deleted them...no much else we can do here.  
 
 
