@@ -22,7 +22,11 @@ In this repository, we will explore a series of challenges related to S3 by leve
 > **Note**
 > To add depth and realism to the scenario, we will structure our challenge by assuming that flaws.cloud is a web service  
 > for which a customer has requested a black box Vulnerability Assessment & Penetration Testing (VAPT).  
-> In this approach, we will have no prior information beyond the target domain, making the engagement more challenging and realistic.
+> In this approach, we will have no prior information beyond the target domain, making the engagement more challenging and realistic.  
+
+
+> **Note**
+> All challenges are dependent on one another so procede in order.  
 
 <details>
 <summary>Challenge 1</summary>
@@ -422,7 +426,22 @@ We know that the link to the new bucket is http://level4-1156739cfb264ced6de5149
 > It'll be useful to know that a snapshot was made of that EC2 shortly after nginx was setup on it.  
 > Also you need the aws keys retrieved in the previous challenge.  
 
+If we open a browser to `4d0cf09b9b2d761a7d87be99d17507bce8b86f3b.flaws.cloud` we are presented with a login page:  
+<img src="images/challenge4-login-page.png" alt="flaws.cloud" width="3000" height="290">  
 
+We need to retrieve the right credentials in order to sign-in.  
+The challenge tip informs us that we are dealing with a backup of an [EC2](https://aws.amazon.com/ec2/) instance, and if we recall from the previous challenge, the username was indeed `backup`.  
+Let's see if we can list the backups/snapshots of the EC2 instance using the AWS CLI:  
+```console
+ aws  ec2 describe-snapshots --owner-ids 975426262029
+
+{
+    "Snapshots": []
+}
+```  
+
+Mmmm it seems that, as of 07/11/2023, there are no snapshots.  
+Maybe the maker of flaws.cloud deleted them...no much else we can do here.  
 
 
 
