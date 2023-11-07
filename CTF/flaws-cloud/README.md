@@ -24,6 +24,7 @@ In this repository, we will explore a series of challenges related to S3 by leve
 > for which a customer has requested a black box **Vulnerability Assessment & Penetration Testing (VAPT)**.  
 > In this approach, we will have no prior information beyond the target domain, making the engagement more challenging and realistic.  
 
+<br/>
 
 > **Note**
 > All challenges are dependent on one another so proceed in order.  
