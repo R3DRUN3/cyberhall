@@ -347,7 +347,7 @@ HEAD is now at f52ec03 first commit
 access_keys.txt         authenticated_users.png hint1.html              hint2.html              hint3.html              hint4.html              index.html              robots.txt
 ```  
 
-Interesting...there is an access_keys.txt file in the repository!  
+Interesting...there is an `access_keys.txt` file in the repository!  
 Let's inspect that:  
 ```console
 cat access_keys.txt
