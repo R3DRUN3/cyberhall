@@ -140,7 +140,7 @@ Level 2 is at <a href="http://level2-c8b217a33fcf1f839f6f1f73a00a9ae7.flaws.clou
 
 The content of the file displays the link to the next challenge. Well done!  
 
-*Security Mitigations*:  
+**Security Mitigations**:  
 On AWS you can set up S3 buckets with all sorts of permissions and functionality including using them to host static files.  
 A number of people accidentally open them up with permissions that are too loose.  
 By default, S3 buckets are private and secure when they are created.  
