@@ -29,7 +29,7 @@ In this repository, we will explore a series of challenges related to S3 by leve
 > All challenges are dependent on one another so procede in order.  
 
 <details>
-<summary>Challenge 1</summary>
+<summary>CHALLENGE 1</summary>
 
 L'ets begin.  
 As we are aware, the only information available to us is that the service is exposed at the URL http://flaws.cloud:  
@@ -166,7 +166,7 @@ But then you can introduce the flaw if you change the permissions to add `Everyo
 <br/>
 
 <details>
-<summary>Challenge 2</summary>
+<summary>CHALLENGE 2</summary>
 
 Now we can procede with the second challenge.  
 
@@ -240,7 +240,7 @@ We need to explain to our customer that similar to opening permissions to `Every
 <br/>
 
 <details>
-<summary>Challenge 3</summary>
+<summary>CHALLENGE 3</summary>
 
 Now we can procede with the third challenge.  
 We know that the link to the new bucket is http://level3-9afd3927f195e10225021a578e6f78df.flaws.cloud.  
@@ -416,7 +416,7 @@ Roll your secrets early and often and [use roles instead of keys whenever possib
 <br/>
 
 <details>
-<summary>Challenge 4</summary>
+<summary>CHALLENGE 4</summary>
 
 Now we can procede with challenge 4.  
 We know that the link to the new bucket is http://level4-1156739cfb264ced6de514971a4bef68.flaws.cloud.  
