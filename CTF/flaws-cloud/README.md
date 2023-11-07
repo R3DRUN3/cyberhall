@@ -144,8 +144,8 @@ The content of the file displays the link to the next challenge. Well done!
 On AWS you can set up S3 buckets with all sorts of permissions and functionality including using them to host static files.  
 A number of people accidentally open them up with permissions that are too loose.  
 By default, S3 buckets are private and secure when they are created.  
-To allow it to be accessed as a web page, you have to turn on `Static Website Hosting` and changed the aws bucket policy to allow everyone `s3:GetObject` privileges  
-which is fine if you plan to publicly host the bucket as a web page.  
+To allow it to be accessed as a web page, you have to turn on `Static Website Hosting` and changed the aws  
+bucket policy to allow everyone `s3:GetObject` privileges, which is fine if you plan to publicly host the bucket as a web page.  
 But then you can introduce the flaw if you change the permissions to add `Everyone` to have `List` permissions.
 
 > **Warning**
