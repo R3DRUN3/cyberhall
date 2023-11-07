@@ -416,7 +416,15 @@ Roll your secrets early and often and [use roles instead of keys whenever possib
 
 Now we can procede with challenge 4.  
 We know that the link to the new bucket is http://level4-1156739cfb264ced6de514971a4bef68.flaws.cloud.  
-Once you have your aws cli configured with keys from your aws account, let's try to list all the files in the bucket:  
+
+> **Note**
+> For the next level, you need to get access to the web page running on an EC2 at 4d0cf09b9b2d761a7d87be99d17507bce8b86f3b.flaws.cloud  
+> It'll be useful to know that a snapshot was made of that EC2 shortly after nginx was setup on it.  
+> Also you need the aws keys retrieved in the previous challenge.  
+
+
+
+
 
 
 </details>
