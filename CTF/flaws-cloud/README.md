@@ -89,7 +89,8 @@ The same DNS lookup result applies to every other IP addresses taken from the ab
 
 > **Note**
 > All S3 buckets, when configured for web hosting, are given an AWS domain you can use to browse to it without setting up your own DNS.  
-> In this case, flaws.cloud can also be visited by going to http://flaws.cloud.s3-website-us-west-2.amazonaws.com/  
+> In this case, flaws.cloud can also be visited by going to http://flaws.cloud.s3-website-us-west-2.amazonaws.com.  
+> That is the reason why S3 bucket names must be unique world-wide and they must follow DNS name rules.  
 
 Let's do a recap of what we know so far:  
 We know that we have a bucket named `flaws.cloud` in `us-west-2`  
