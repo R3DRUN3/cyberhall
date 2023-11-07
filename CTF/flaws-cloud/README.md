@@ -26,7 +26,7 @@ In this repository, we will explore a series of challenges related to S3 by leve
 
 
 > **Note**
-> All challenges are dependent on one another so procede in order.  
+> All challenges are dependent on one another so proceed in order.  
 
 <details>
 <summary>CHALLENGE 1</summary>
