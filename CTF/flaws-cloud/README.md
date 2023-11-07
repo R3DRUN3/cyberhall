@@ -13,4 +13,43 @@ Establishing robust S3 security practices is essential for safeguarding valuable
 
 In this repository, we will explore a series of challenges related to S3 by leveraging [flaws.cloud](http://flaws.cloud).  
 
-## Challenges
+## Challenges  
+> **Note**
+> To add depth and realism to the scenario, we will structure our challenge by assuming that flaws.cloud is a web service  
+> for which a client has requested a black box Vulnerability Assessment & Penetration Testing (VAPT).  
+> In this approach, we will have no prior information beyond the target domain, making the engagement more challenging and realistic.
+
+<details>
+<summary>Challenge 1</summary>
+
+
+
+</details>
+
+<br/>
+
+<details>
+<summary>Challenge 2</summary>
+
+
+</details>
+
+<br/>
+
+<details>
+<summary>Challenge 3</summary>
+
+
+</details>
+
+<br/>
+
+<details>
+<summary>Challenge 4</summary>
+
+
+</details>
+
+<br/>
+
+
