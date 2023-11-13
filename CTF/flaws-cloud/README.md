@@ -38,7 +38,7 @@ As we are aware, the only information available to us is that the service is exp
 <img src="images/flaws-website.png" alt="flaws.cloud" width="3000" height="290">  
 
 
-The initial step we can take is to perform a DNS lookup to gather additional information:  
+The initial step we can take is to perform a DNS lookup (*forward lookup*) on the domain in order to gather additional information:  
 ```console
 nslookup flaws.cloud
 
@@ -68,7 +68,7 @@ and services are hosted on multiple servers for redundancy and load balancing.
 This means that the same domain name (in this case, "flaws.cloud") can resolve to multiple IP addresses.  
 
 The purpose of this approach is to ensure high availability and better distribution of traffic.  
-Let's take a random IP address from the list and try to execute a DNS lookup on that:  
+Let's take a random IP address from the list and try to execute a DNS lookup (*reverse lookup*) on that:  
 ```console
 nslookup 52.92.148.203
 
