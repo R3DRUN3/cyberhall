@@ -2,7 +2,7 @@
 
 ## Abstract
 This readme contains step-by-step instructions to demonstrate the usage of [CRIU](https://criu.org/Main_Page) on kubernetes in order to generate snapshot of running containers.    
-This can be usefull for incident-response activities.  
+This can be usefull for incident-response and forensic analysis activities.  
 
 
 ## Prerequisites
@@ -67,7 +67,9 @@ Now we need to enable the criu support for cri-o:
 ```console
 systemctl stop crio \
 && crio --enable-criu-support=true
-```   
+```
+This command is blocking as it shows the crio log for better understanding of what is going on and identify possible errors.  
+Leave the terminal open and continue to input the below commands from a new terminal.  
 
 
 Inside the minikube node create 2 files, `client.crt` and `client.key` with the contents that you find in:
@@ -183,5 +185,148 @@ Displaying processes memory sizes from /var/lib/kubelet/checkpoints/checkpoint-n
 |   7 | nginx        | 1.2 MiB     | 8.0 KiB            |
 +-----+--------------+-------------+--------------------+
 ```  
+
+Now let's go and inspect our snapshot structure.  
+Let's untar our snapshot archive:  
+```console
+mkdir nginx_restore \
+&& tar -xf /var/lib/kubelet/checkpoints/checkpoint-nginx_default-nginx-2023-12-07T11:23:16Z.tar -C nginx_restore \
+&& cd nginx_restore \
+&& ls
+```  
+
+Output:  
+```console
+bind.mounts  checkpoint  config.dump  dump.log  io.kubernetes.cri-o.LogPath  rootfs-diff.tar  spec.dump  stats-dump
+```  
+These are all the files and directories that we need in order to inspect our container snapshot.  
+For example we can cat the config dump:  
+```console
+cat config.dump
+```  
+Output:  
+```json
+{
+  "id": "571dd9eb9f1d11cc26a683ce1c898dbafc001fc5c930c2dbcd5180eb83ca53d8",
+  "name": "k8s_nginx_nginx_default_56e12ebd-b2fb-46b4-b083-169e19c9b554_1",
+  "rootfsImage": "295c7be079025306c4f1d65997fcf7adb411c88f139ad1d34b537164aa060369",
+  "rootfsImageRef": "295c7be079025306c4f1d65997fcf7adb411c88f139ad1d34b537164aa060369",
+  "rootfsImageName": "docker.io/library/nginx:1.14.2",
+  "runtime": "runc",
+  "createdTime": "2023-12-11T14:27:20.998153919Z",
+  "checkpointedTime": "2023-12-11T14:29:55.396005457Z",
+  "restoredTime": "0001-01-01T00:00:00Z",
+  "restored": false
+}
+```  
+
+Or investigate network bind mounts:  
+```console
+cat bind.mounts
+```  
+
+Output:  
+```json
+[
+  {
+    "source": "/run/containers/storage/overlay-containers/60f45dcb6460a442e7768a7db18fe54277afc6e90b81d1f831a18220b7c92e78/userdata/resolv.conf",
+    "destination": "/etc/resolv.conf",
+    "file_type": "file",
+    "permissions": 420
+  },
+  {
+    "source": "/run/containers/storage/overlay-containers/60f45dcb6460a442e7768a7db18fe54277afc6e90b81d1f831a18220b7c92e78/userdata/hostname",
+    "destination": "/etc/hostname",
+    "file_type": "file",
+    "permissions": 420
+  },
+  {
+    "source": "/var/lib/kubelet/pods/56e12ebd-b2fb-46b4-b083-169e19c9b554/etc-hosts",
+    "destination": "/etc/hosts",
+    "file_type": "file",
+    "permissions": 420
+  },
+  {
+    "source": "/var/lib/kubelet/pods/56e12ebd-b2fb-46b4-b083-169e19c9b554/containers/nginx/a4d8fc6f",
+    "destination": "/dev/termination-log",
+    "file_type": "file",
+    "permissions": 438
+  },
+  {
+    "source": "/var/lib/kubelet/pods/56e12ebd-b2fb-46b4-b083-169e19c9b554/volumes/kubernetes.io~projected/kube-api-access-wjlb8",
+    "destination": "/var/run/secrets/kubernetes.io/serviceaccount",
+    "file_type": "directory",
+    "permissions": 511
+  }
+]
+```  
+Or check the cgroups:  
+```console
+sudo crit decode -i checkpoint/cgroup.img --pretty
+```   
+Output:  
+```json
+{
+    "magic": "CGROUP",
+    "entries": [
+        {
+            "sets": [
+                {
+                    "id": 2,
+                    "ctls": [
+                        {
+                            "name": "",
+                            "path": "/crio/crio-571dd9eb9f1d11cc26a683ce1c898dbafc001fc5c930c2dbcd5180eb83ca53d8",
+                            "cgns_prefix": 75
+                        }
+                    ]
+                },
+                {
+                    "id": 3,
+                    "ctls": [
+                        {
+                            "name": "",
+                            "path": "/crio/crio-571dd9eb9f1d11cc26a683ce1c898dbafc001fc5c930c2dbcd5180eb83ca53d8",
+                            "cgns_prefix": 75
+                        }
+                    ]
+                }
+            ],
+            "controllers": [
+                {
+                    "cnames": [
+                        ""
+                    ],
+                    "dirs": [
+                        {
+                            "dir_name": "crio/crio-571dd9eb9f1d11cc26a683ce1c898dbafc001fc5c930c2dbcd5180eb83ca53d8",
+                            "properties": [
+                                {
+                                    "name": "cgroup.procs",
+                                    "value": "",
+                                    "perms": {
+                                        "mode": 33188,
+                                        "uid": 0,
+                                        "gid": 0
+                                    }
+                                }
+                            ],
+                            "dir_perms": {
+                                "mode": 16877,
+                                "uid": 0,
+                                "gid": 0
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+```  
+
+
+Note that, once you have this snapshot available, you can restore this into a docker container and exec into it/use tool to do further analysis!  
+
 
 
