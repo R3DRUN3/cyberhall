@@ -156,7 +156,7 @@ A number of people accidentally open them up with permissions that are too loose
 By default, S3 buckets are private and secure when they are created.  
 To allow it to be accessed as a web page, you have to turn on `Static Website Hosting` and changed the aws  
 bucket policy to allow everyone `s3:GetObject` privileges, which is fine if you plan to publicly host the bucket as a web page.  
-But then you can introduce the flaw if you change the permissions to add `Everyone` to have `List` permissions.
+But then you can introduce the flaw if you change the permissions to add `Everyone` to have `List` permissions.  
 
 >[!Warning]
 > "Everyone" means everyone on the Internet!
@@ -232,7 +232,7 @@ The content of the file displays the link to the next challenge. Well done!
 **Security Mitigations**:  
 We need to explain to our customer that similar to opening permissions to `Everyone` in the previous bucket/challenge, people accidentally open permissions to `Any Authenticated AWS User`.  
 
->[!Warning]
+> [!Warning]
 > They might mistakenly think this will only be users of their account, when in fact it means anyone that has an AWS account!
 
 
