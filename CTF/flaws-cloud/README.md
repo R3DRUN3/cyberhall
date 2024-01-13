@@ -19,14 +19,14 @@ In this repository, we will explore a series of challenges related to S3 by leve
 
 
 ## Challenges  
-> **Note**
+> [!Note]
 > To add depth and realism to the scenario, we will structure our challenge by assuming that flaws.cloud is a web service  
 > for which a customer has requested a black box **Vulnerability Assessment & Penetration Testing (VAPT)**.  
 > In this approach, we will have no prior information beyond the target domain, making the engagement more challenging and realistic.  
 
 <br/>
 
-> **Note**
+> [!Note]
 > All challenges are dependent on one another so proceed in order.  
 
 <details>
@@ -87,7 +87,7 @@ website hosted in the US West (Oregon) region.
 The same DNS lookup result applies to every other IP addresses taken from the above output.  
 
 
-> **Note**
+> [!Note]
 > All S3 buckets, when configured for web hosting, are given an AWS domain you can use to browse to it without setting up your own DNS.  
 > In this case, flaws.cloud can also be visited by going to http://flaws.cloud.s3-website-us-west-2.amazonaws.com.  
 > That is the reason why S3 bucket names must be unique world-wide and they must follow DNS naming conventions.  
@@ -158,7 +158,7 @@ To allow it to be accessed as a web page, you have to turn on `Static Website Ho
 bucket policy to allow everyone `s3:GetObject` privileges, which is fine if you plan to publicly host the bucket as a web page.  
 But then you can introduce the flaw if you change the permissions to add `Everyone` to have `List` permissions.
 
-> **Warning**
+> [!Warning]
 > "Everyone" means everyone on the Internet!
 
 
@@ -172,7 +172,7 @@ But then you can introduce the flaw if you change the permissions to add `Everyo
 
 Now we can procede with the second challenge.  
 
-> **Note**
+> [!Note]
 > This challenge is similar to the first one but you will need an aws accout.  
 
 
@@ -232,7 +232,7 @@ The content of the file displays the link to the next challenge. Well done!
 **Security Mitigations**:  
 We need to explain to our customer that similar to opening permissions to `Everyone` in the previous bucket/challenge, people accidentally open permissions to `Any Authenticated AWS User`.  
 
-> **Warning**
+> [!Warning]
 > They might mistakenly think this will only be users of their account, when in fact it means anyone that has an AWS account!
 
 
@@ -405,7 +405,7 @@ We need to explain to our customer that People often leak AWS keys and then try 
 You should always revoke any AWS keys (or any secrets) that could have been leaked or were misplaced.  
 Roll your secrets early and often and [use roles instead of keys whenever possible](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html).  
 
-> **Warning**
+> [!Warning]
 > If sensitive information or secrets are accidentally leaked and committed to a Git repository, simply removing them in a new commit is not sufficient.  
 > These secrets can still exist in the repository's history, and they may be accessible to anyone with access to that repository.  
 > If you accidentally committed a secret, consider rewriting your Git history to remove any traces of it.  
@@ -423,7 +423,7 @@ Roll your secrets early and often and [use roles instead of keys whenever possib
 Now we can procede with challenge 4.  
 We know that the link to the new bucket is http://level4-1156739cfb264ced6de514971a4bef68.flaws.cloud.  
 
-> **Note**
+> [!Note]
 > For the next level, you need to get access to the web page running on an EC2 at 4d0cf09b9b2d761a7d87be99d17507bce8b86f3b.flaws.cloud  
 > It'll be useful to know that a snapshot was made of that EC2 shortly after nginx was setup on it.  
 > Also you need the aws keys retrieved in the previous challenge.  
