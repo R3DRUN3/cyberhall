@@ -158,7 +158,7 @@ To allow it to be accessed as a web page, you have to turn on `Static Website Ho
 bucket policy to allow everyone `s3:GetObject` privileges, which is fine if you plan to publicly host the bucket as a web page.  
 But then you can introduce the flaw if you change the permissions to add `Everyone` to have `List` permissions.
 
-> [!Warning]
+>[!Warning]
 > "Everyone" means everyone on the Internet!
 
 
@@ -232,7 +232,7 @@ The content of the file displays the link to the next challenge. Well done!
 **Security Mitigations**:  
 We need to explain to our customer that similar to opening permissions to `Everyone` in the previous bucket/challenge, people accidentally open permissions to `Any Authenticated AWS User`.  
 
-> [!Warning]
+>[!Warning]
 > They might mistakenly think this will only be users of their account, when in fact it means anyone that has an AWS account!
 
 
@@ -405,7 +405,7 @@ We need to explain to our customer that People often leak AWS keys and then try 
 You should always revoke any AWS keys (or any secrets) that could have been leaked or were misplaced.  
 Roll your secrets early and often and [use roles instead of keys whenever possible](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html).  
 
-> [!Warning]
+>[!Warning]
 > If sensitive information or secrets are accidentally leaked and committed to a Git repository, simply removing them in a new commit is not sufficient.  
 > These secrets can still exist in the repository's history, and they may be accessible to anyone with access to that repository.  
 > If you accidentally committed a secret, consider rewriting your Git history to remove any traces of it.  
