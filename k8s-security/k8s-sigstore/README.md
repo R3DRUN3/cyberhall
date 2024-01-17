@@ -107,7 +107,7 @@ spec:
 ```  
 
 The purpose of this policy is to verify image attestations before admitting an image into a Kubernetes cluster.  
-The policy checks the existence of a SBOM attestation attached to a container image and deny the admission if it does not find one or the key does not match.  
+The policy checks the existence of a SBOM attestation (in [SPDX](https://spdx.github.io/spdx-spec/v2.3/) format) attached to a container image and deny the admission if it does not find one or the key does not match.  
 Apply the policy:  
 ```console
 kubectl apply -f test/cluster-image-policy.yaml
