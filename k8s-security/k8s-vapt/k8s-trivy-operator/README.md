@@ -6,8 +6,9 @@ that enhances cluster security via continuous configuration and vulnerabilities 
 ## Prerequisites
 
 - Docker
-- KinD
 - Helm
+- KinD
+- Kubectl
 
 ## Instructions to test
 
@@ -736,7 +737,7 @@ You can also [create custom policies via Rego (OPA)](https://aquasecurity.github
 
 To delete the test cluster, launch the following command:  
 ```console
-kind delete cluster --name security-cluster --config test/cluster-config.yaml
+kind delete cluster --name security-cluster
 ```  
 
 
