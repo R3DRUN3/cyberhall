@@ -50,7 +50,7 @@ deployment.apps/policy-controller-webhook condition met
 deployment.apps/policy-controller-policy-webhook condition met
 ```  
 
-> ![Note]
+> **Note**  
 > If you get an error on `policy-controller-policy-webhook` you can still continue with the tutorial.  
 
 
@@ -150,6 +150,7 @@ In order to better understand attestations, take a look at the [in-toto attestat
 In ordert to understand how in-toto verifies an attestation, take a look at the [in-toto validation model](https://github.com/in-toto/attestation/blob/main/docs/validation.md).  
 
 If you want to learn more about this admission controller, please read the [official documentation](https://docs.sigstore.dev/policy-controller/overview/).  
+
 
 
 
