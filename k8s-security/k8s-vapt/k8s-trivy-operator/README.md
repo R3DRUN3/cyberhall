@@ -65,7 +65,7 @@ job.batch/node-collector-79fdd6ddc            0/1           2m25s      2m25s
 job.batch/scan-vulnerabilityreport-b49fc47b   0/1           3m25s      3m25s
 ```   
 
-Retrieve the list of the CRDs that has been installed:  
+Retrieve the list of all the *Custom Resource Definitions* :  
 ```console
 kubectl get crd
 
