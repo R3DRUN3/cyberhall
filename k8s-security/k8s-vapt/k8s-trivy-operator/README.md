@@ -732,7 +732,7 @@ Report:
 
 
 
-You can also [create custom policies via Rego (OPA)](https://aquasecurity.github.io/trivy-operator/latest/tutorials/writing-custom-configuration-audit-policies/) in order to exampand and customize your vulnerabilities reports.  
+You can also [create custom policies via Rego (OPA)](https://aquasecurity.github.io/trivy-operator/latest/tutorials/writing-custom-configuration-audit-policies/) in order to customize your vulnerabilities reports.  
 
 To delete the test cluster, launch the following command:  
 ```console
