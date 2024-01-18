@@ -125,7 +125,7 @@ index.docker.io/library/nginx@sha256:2bcabc23b45489fb0885d69a06ba1d648aeda973fae
 ```  
 
 As we expected the policy controller denied our image.  
-Let's now try with an image that has SBOM (SPDX) attestations (from [this repo](https://github.com7r3drun3/immunize)):  
+Let's now try with an image that has SBOM (SPDX) attestations (from [this repo](https://github.com/r3drun3/immunize)):  
 ```console
 kubectl run --image ghcr.io/r3drun3/immunize/docker.io/library/nginx:1.21.6-immunized attestedimage
 ```  
