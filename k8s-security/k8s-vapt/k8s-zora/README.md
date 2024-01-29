@@ -18,7 +18,7 @@ Launch a local cluster with *KinD*
 kind create cluster --name security-cluster --config test/cluster-config.yaml
 ```   
 
-Now sign in at [zora-dashboard](https://zora-dashboard.undistro.io/login) and click on Conncet cluster:  
+Now sign in at [zora-dashboard](https://zora-dashboard.undistro.io/login) and click on Connect cluster:  
 ![zd](./images/zd-connect-cluster.png)  
 
 This will generate the helm command to install zora (Open source) on your cluster and connect it to the zora dashboard (SaaS Service).  
