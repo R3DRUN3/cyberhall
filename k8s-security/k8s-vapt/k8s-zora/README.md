@@ -33,7 +33,7 @@ helm upgrade --install zora undistro/zora \
   --create-namespace \
   --wait \
   --set clusterName="$(kubectl config current-context)" \
-  --set saas.workspaceID='5f32d62d-6a66-449f-b53e-17e716f0314e'
+  --set saas.workspaceID='<workspace-id-here>'
 ```  
 
 This command will install Zora in zora-system namespace, creating the namespace if it doesn't already exist and then link your cluster to the zora dahsboard.  
