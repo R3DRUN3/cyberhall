@@ -209,6 +209,12 @@ spec:
 
 Dive deeper by exploring the [official documentation](https://zora-docs.undistro.io/latest/).
 
+To delete the local test cluster:  
+```console
+kind delete cluster --name security-cluster
+```  
+
+
 
 
 
