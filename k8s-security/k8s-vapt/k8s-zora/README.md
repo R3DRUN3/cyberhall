@@ -1,4 +1,4 @@
-# KUBERNETES ZORA
+# ZORA
 
 [Zora](https://github.com/aquasecurity/trivy-operator) is an open-source solution that helps you achieve compliance with Kubernetes best practices recommended by industry-leading frameworks.  
 
