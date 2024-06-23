@@ -2,7 +2,12 @@
 
 ## Abstract 
 This repository collects notes, walkthroughs and proof of concepts <br/> for everything related to the world of cybersecurity, especially CTF (Capture The Flag).<br/><br/>
-I strongly believe that the best way to learn InfoSec and SecOps <br/> is to get your hands dirty and hit your head repeatedly and violently against it 😄
+I strongly believe that the best way to learn InfoSec and SecOps <br/> is to get your hands dirty and hit your head repeatedly and violently against it 😄 
+
+
+> [!NOTE]  
+> If you like this repo I also suggest you to take a look at [*this*](https://github.com/r3drun3/sploitcraft).
+
 
 ## Usage
 Clone this repo and move to the desired subfolder to read notes and execute code.
