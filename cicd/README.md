@@ -3,3 +3,4 @@ Following are some examples of security related to Continuous Integration and Co
 
 - [Tekton build pipeline with security and quality gates](https://github.com/R3DRUN3/tekton-pipeline)
 - [Pipeline to patch CVEs in docker Images OS layer](https://github.com/R3DRUN3/immunize)
+- [Offensive Security for CI/CD environments](https://github.com/R3DRUN3/sploitcraft/tree/main/ci-cd)
